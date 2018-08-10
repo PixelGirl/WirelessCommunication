@@ -3,11 +3,7 @@
 /eclipse/
 /build/
 /libs/
-/forge-1.7.10-10.13.4.1614-1.7.10-changelog.txt
 /run/
 /out/
-/MinecraftForge-Credits.txt
-/MinecraftForge-License.txt
-/README.txt
-/CREDITS-fml.txt
-/LICENSE-fml.txt
+
+*.iml
