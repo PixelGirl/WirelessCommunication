@@ -6,6 +6,6 @@ This mod adds options for wireless transfer of resources to the game.
 
 make sure you have wget installed  
 use your preferred package manager to do so if not  
-or `choco install wget` i you are unfortunate enough to be using windows
+or `choco install wget` if you are unfortunate enough to be using windows
 
 then execute `setup.sh`
