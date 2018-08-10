@@ -15,6 +15,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'idea'
+}
+
 apply plugin: 'forge'
 
 version = "1.0"
@@ -40,6 +44,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 processResources
@@ -59,5 +64,14 @@ processResources
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+idea {
+    module {
+        excludeDirs += [file("run")]
+
+        //if you love browsing Javadoc
+        downloadJavadoc = true
     }
 }
