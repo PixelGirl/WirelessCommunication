@@ -1,0 +1,6 @@
+itemGroup.wirelesscommunication=Wireless Communication
+
+item.portable_transmitter.name=Portable Transmitter
+tile.wireless_transmitter.name=Wireless Transmitter
+tile.wireless_receiver.name=Wireless Receiver
+tile.wireless_transceiver.name=Wireless Transceiver

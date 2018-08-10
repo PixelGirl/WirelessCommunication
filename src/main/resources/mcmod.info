@@ -1,0 +1,20 @@
+[
+    {
+        "modid": "WirelessCommunication",
+        "name": "Wireless Communication",
+        "description": "Adds options for wireless data and item transferring.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": [
+            "PixelGirl"
+        ],
+        "credits": "",
+        "logoFile": "assets/wirelesscommunication/textures/logo.png",
+        "screenshots": [],
+        "dependencies": [
+            "MinecraftForge,CoFHCore,ThermalFoundation"
+        ]
+    }
+]
