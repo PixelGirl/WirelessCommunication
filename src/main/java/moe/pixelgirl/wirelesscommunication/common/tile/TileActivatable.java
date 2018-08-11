@@ -1,5 +1,4 @@
 package moe.pixelgirl.wirelesscommunication.common.tile;
-
 import cofh.core.network.PacketCoFHBase;
 import net.minecraft.nbt.NBTTagCompound;
 

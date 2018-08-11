@@ -1,5 +1,4 @@
 package moe.pixelgirl.wirelesscommunication.gui.container;
-
 import cofh.lib.gui.slot.SlotEnergy;
 import cofh.lib.gui.slot.SlotRemoveOnly;
 import moe.pixelgirl.wirelesscommunication.common.tile.TileWirelessTransmitter;

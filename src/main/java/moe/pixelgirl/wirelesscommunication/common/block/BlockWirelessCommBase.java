@@ -1,13 +1,10 @@
 package moe.pixelgirl.wirelesscommunication.common.block;
 import cofh.api.block.IDismantleable;
-import cofh.core.util.CoreUtils;
 import moe.pixelgirl.wirelesscommunication.common.util.BlockHelper;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
 import java.util.ArrayList;
 
 /**

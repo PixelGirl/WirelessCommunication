@@ -2,12 +2,8 @@ package moe.pixelgirl.wirelesscommunication.common.block;
 import moe.pixelgirl.wirelesscommunication.WirelessCommunication;
 import moe.pixelgirl.wirelesscommunication.common.tile.TileWirelessReceiver;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import java.util.ArrayList;
 
 /**
  * WirelessCommunication

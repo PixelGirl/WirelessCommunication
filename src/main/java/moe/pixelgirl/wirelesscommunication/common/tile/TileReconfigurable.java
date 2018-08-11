@@ -1,6 +1,5 @@
 package moe.pixelgirl.wirelesscommunication.common.tile;
 import cofh.core.network.PacketCoFHBase;
-import cofh.lib.util.helpers.ServerHelper;
 import moe.pixelgirl.wirelesscommunication.common.util.SideConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

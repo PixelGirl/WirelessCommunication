@@ -1,8 +1,7 @@
 package moe.pixelgirl.wirelesscommunication.common.block;
+import cofh.api.tileentity.ISidedTexture;
 import cofh.lib.util.helpers.ServerHelper;
 import moe.pixelgirl.wirelesscommunication.WirelessCommunication;
-import cofh.api.tileentity.ISidedTexture;
-import cofh.lib.util.position.IRotateableTile;
 import moe.pixelgirl.wirelesscommunication.common.tile.TileMachineBase;
 import moe.pixelgirl.wirelesscommunication.common.util.BlockHelper;
 import moe.pixelgirl.wirelesscommunication.common.util.Utils;
@@ -17,8 +16,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+
 import java.util.ArrayList;
 import java.util.Random;
 

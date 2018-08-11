@@ -1,12 +1,6 @@
 package moe.pixelgirl.wirelesscommunication.common.tile;
 import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyReceiver;
 import moe.pixelgirl.wirelesscommunication.common.block.BlockMachineBase;
-import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.ForgeDirection;
-
-import java.util.ArrayList;
 
 /**
  * WirelessCommunication
