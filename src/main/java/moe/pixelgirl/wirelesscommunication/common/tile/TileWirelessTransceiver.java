@@ -23,4 +23,9 @@ public class TileWirelessTransceiver extends TileWirelessInterfaceBase {
     public void update() {
 
     }
+
+    @Override
+    public boolean hasChargeSlot() {
+        return false;
+    }
 }
