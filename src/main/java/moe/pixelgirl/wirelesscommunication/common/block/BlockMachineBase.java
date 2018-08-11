@@ -1,15 +1,11 @@
 package moe.pixelgirl.wirelesscommunication.common.block;
-import cofh.api.tileentity.ISecurable;
-import cofh.core.block.BlockCoFHBase;
-import cofh.core.block.TileCoFHBase;
+import cofh.lib.util.helpers.ServerHelper;
 import moe.pixelgirl.wirelesscommunication.WirelessCommunication;
 import cofh.api.tileentity.ISidedTexture;
-import cofh.api.block.IDismantleable;
-import cofh.core.util.CoreUtils;
 import cofh.lib.util.position.IRotateableTile;
 import moe.pixelgirl.wirelesscommunication.common.tile.TileMachineBase;
-import moe.pixelgirl.wirelesscommunication.common.tile.TileWirelessInterfaceBase;
 import moe.pixelgirl.wirelesscommunication.common.util.BlockHelper;
+import moe.pixelgirl.wirelesscommunication.common.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -22,6 +18,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -30,7 +27,7 @@ import java.util.Random;
  * moe.pixelgirl.wirelesscommunication.common.block
  * Created by Pixel.
  */
-public abstract class BlockMachineBase extends BlockWirelessCommBase implements IRotateableTile {
+public abstract class BlockMachineBase extends BlockWirelessCommBase {
 
     public enum Types{
         TRANSMITTER,
@@ -76,7 +73,36 @@ public abstract class BlockMachineBase extends BlockWirelessCommBase implements 
     }
 
     @Override
-    public abstract boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float lx, float ly, float lz);
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float lx, float ly, float lz) {
+        PlayerInteractEvent event = new PlayerInteractEvent(player, PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK, x, y, z, side, world);
+
+        if(player.isSneaking()) {
+            if(!Utils.isHoldingUsableWrench(player, x, y, z)) return false;
+            if(ServerHelper.isServerWorld(world) && canDismantle(player, world, x, y, z)) dismantleBlock(player, world, x, y, z, false);
+            Utils.usedWrench(player, x, y, z);
+            return true;
+        }
+
+        TileEntity tileEntity = world.getTileEntity(x, y, z);
+        if(tileEntity instanceof TileMachineBase) {
+            if(Utils.isHoldingUsableWrench(player, x, y, z)) {
+                if(ServerHelper.isServerWorld(world)) ((TileMachineBase) tileEntity).onWrench(player, side);
+                Utils.usedWrench(player, x, y, z);
+                return true;
+            }
+            if(ServerHelper.isServerWorld(world) && hasGui()) {
+                player.openGui(WirelessCommunication.instance, getGuiId(), world, x, y, z);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    boolean hasGui() {
+        return true;
+    }
+
+    abstract int getGuiId();
 
     @Override
     public void breakBlock(World world, int x, int y, int z, Block block, int par6) {
@@ -117,33 +143,6 @@ public abstract class BlockMachineBase extends BlockWirelessCommBase implements 
 
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return null;
-    }
-
-    /* IRotateableTile */
-
-    @Override
-    public boolean canRotate() {
-        return true;
-    }
-
-    @Override
-    public boolean canRotate(ForgeDirection axis) {
-        return true;
-    }
-
-    @Override
-    public void rotate(ForgeDirection axis) {
-
-    }
-
-    @Override
-    public void rotateDirectlyTo(int facing) {
-
-    }
-
-    @Override
-    public ForgeDirection getDirectionFacing() {
         return null;
     }
 
