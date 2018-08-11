@@ -1,11 +1,11 @@
 # Wireless Communication
 
-This mod adds options for wireless transfer of resources to the game.
+This mod adds options for wirelessly transferring resources to the game.
 
 ## Setup for developers
 
-make sure you have wget installed  
-use your preferred package manager to do so if not  
-or `choco install wget` if you are unfortunate enough to be using windows
+Make sure you have wget installed.  
+If not, use your preferred package manager to do so.  
+Or use `choco install wget` if you are unfortunate enough to be using Windows and have [Chocolatey](https://chocolatey.org/) installed.
 
-then execute `setup.sh`
+Then execute `setup.sh`.
